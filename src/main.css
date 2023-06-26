@@ -1,9 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
   }
   
+p {
+margin: 0;
+padding: 0;
+}
   h1 {
     text-align: center;
   }
@@ -11,7 +14,7 @@ body {
   .search-form {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   input[type="text"] {
@@ -39,24 +42,49 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .photo-card {
-    margin: 10px;
+    width: 25%;
+    margin: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+    position: relative;
   }
   
   .photo-card img {
-    max-width: 300px;
-    height: auto;
+  width: 100%; 
+  height: 75%;
+  object-fit: cover;
   }
   
   .info {
-    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
     text-align: center;
   }
   
   .info-item {
     margin-bottom: 5px;
+  }
+
+  @media (max-width: 1200px) {
+    .photo-card {
+      width: 33.33%; 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .photo-card {
+      width: 50%; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .photo-card {
+      width: 100%; 
+    }
   }
   
