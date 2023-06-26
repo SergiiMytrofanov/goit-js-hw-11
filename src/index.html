@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
-    <title>Пошук зображень</title>
+    <title>Image searching</title>
 </head>
 <body>
  
-    <form class="search-form" id="search-form">
+    <form class="search-form js-search-form" id="search-form">
         <input
           type="text"
           name="searchQuery"
           autocomplete="off"
           placeholder="Search images..."
         />
-        <button type="submit">Search</button>
+        <button class="search-btn js-search-btn" type="submit">Search</button>
       </form>
 
-<script src="./index.js" type="module"></script>
+      <div class ="gallery js-gallery"></div>
+
+      <script src="./fetch.js" type="module"></script>
+      <script src="./index.js" type="module"></script>
 </body>
 </html>
