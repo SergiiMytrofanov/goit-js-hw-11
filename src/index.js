@@ -35,11 +35,17 @@ const createImageCardMarkup = (image) => {
 
 
 const displayImages = (images) => {
+  const totalCount = images.length;
+  console.dir(images)
   const imageCardsMarkup = images.map((image) => createImageCardMarkup(image)).join('');
   galleryEl.innerHTML += imageCardsMarkup;
 
- 
   lightbox.refresh();
+
+  const message = `Hooray! We found ${totalCount} images.`;
+  Notiflix.Notify.success(message);
+
+  scrollPage();
 };
 
 
@@ -69,6 +75,7 @@ const handleSearch = async (event) => {
   }
 };
 
+
 const handleLoadMore = async () => {
   loadMoreBtn.disabled = true;
   currentPage++;
@@ -90,5 +97,22 @@ const handleLoadMore = async () => {
   }
 };
 
+
 searchForm.addEventListener('submit', handleSearch);
 loadMoreBtn.addEventListener('click', handleLoadMore);
+
+
+
+const scrollPage = () => {
+  const { height: cardHeight } = galleryEl.firstElementChild.getBoundingClientRect();
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
+};
+
+
+
+
+
+

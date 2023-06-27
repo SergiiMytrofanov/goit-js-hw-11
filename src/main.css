@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 10px;
+    background-color: #1f2e1f;
+    color:#5e6d5e;
   }
   
 p {
@@ -15,7 +17,14 @@ padding: 0;
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    
   }
+  .search-form input[type="text"] {
+    color: #324932;
+    background-color: #9cbe9c; 
+    border: 1px solid #1b6e22;
+  }
+  
   
   input[type="text"] {
     padding: 10px;
@@ -27,15 +36,20 @@ padding: 0;
   
   button {
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #344134;
+    color: #9cbe9c;
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #405841;
+  }
+
+  .load-more{
+    text-align: center;
+    margin: 0 auto;
   }
   
   .gallery {
@@ -47,10 +61,22 @@ padding: 0;
   
   .photo-card {
     width: 25%;
-    margin: 5px;
+    margin: 15px;
     box-sizing: border-box;
     padding: 5px;
     position: relative;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .photo-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 10px rgba(181, 182, 160, 0.699); 
+    pointer-events: none;
   }
   
   .photo-card img {
